@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CircleImage: View {
+    var image: Image // 하드코딩을 없애고 json으로부터 데이터 받아오기
     var body: some View {
-        Image("turtlerock")
+        image
         // Cicle 타입은 mask로 사용할 수 있는 도형이며, storke, fill등 을 지정해 하나의 뷰로도 사용할 수 있음
         // 이미지가 Circle안에 존재하는 화면의 구성은
         // Image -> Clipshape -> Circle 순서로 화면 위에 그려지기 때문
@@ -26,5 +27,5 @@ struct CircleImage: View {
 }
 
 #Preview {
-    CircleImage()
+    CircleImage(image: Image("turtlerock"))
 }
