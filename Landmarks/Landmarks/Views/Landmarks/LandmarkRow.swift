@@ -19,20 +19,33 @@ struct LandmarkRow: View {
             Text(landmark.name)
             
             Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow)
+            }
         }
     }
 }
 
 // #Preview 매크로를 사용해 선언한 모든 미리보기를 자동으로 인식함
 // 여러 개의 프리뷰를 선언하고 제목을 정해주면 해당 제목으로 프리뷰를 볼 수 있음
-#Preview("Turtle Rock") {
-    // 아래와 같이 같은 뷰 여러 개를 그룹으로 엮어서 표현 가능
-    Group {
+//#Preview("Turtle Rock") {
+//    // 아래와 같이 같은 뷰 여러 개를 그룹으로 엮어서 표현 가능
+//    Group {
+//        LandmarkRow(landmark: landmarks[0])
+//        LandmarkRow(landmark: landmarks[1])
+//    }
+//}
+//
+//#Preview("Salmon") {
+//    LandmarkRow(landmark: landmarks[1])
+//}
+
+#Preview {
+    let landmarks = ModelData().landmarks
+    return Group {
         LandmarkRow(landmark: landmarks[0])
         LandmarkRow(landmark: landmarks[1])
     }
-}
-
-#Preview("Salmon") {
-    LandmarkRow(landmark: landmarks[1])
 }

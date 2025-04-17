@@ -25,4 +25,5 @@ struct ContentView: View {
 // 캔버스가 보이지 않을 경우, Editor > Canvas 선택
 #Preview {
     ContentView()
+        .environment(ModelData())
 }
