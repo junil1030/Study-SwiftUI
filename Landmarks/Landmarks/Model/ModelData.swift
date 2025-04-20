@@ -11,6 +11,7 @@ import SwiftUI
 // Observable을 사용하여 뷰가 데이터 변경을 감지하고 자동으로 갱신하도록 함
 @Observable class ModelData {
     var landmarks: [Landmark] = load("landmarkData.json")
+    var hikes: [Hike] = load("hikeData.json")
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
